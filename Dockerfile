@@ -24,4 +24,6 @@ ARG VERSION=dev
 
 RUN sed -i "s/__version__ = .*/__version__ = '${VERSION}'/" /kube_downscaler/__init__.py
 
+USER nobody
+
 ENTRYPOINT ["python3", "-m", "kube_downscaler"]
